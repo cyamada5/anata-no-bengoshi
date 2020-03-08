@@ -43,8 +43,8 @@
               <li class="main-nav_item"><a href="index.html" class=""><img src="img/logo-notext.png" alt="TOPへ戻る"></i></a></li>
               <li class="main-nav_item"><a href="review.html" class=""><i class="fas fa-pencil-alt fa-fw"></i><p>レビューする</p></a></li>
               <li class="main-nav_item"><a href="search.html" class=""><i class="fas fa-search fa-fw"></i><p>ワードでさがす</p></a></li>
-              <li class="main-nav_item"><a href="index.html#map-area-id" class=""><i class="fas fa-map-marked-alt fa-fw"></i><p>エリアからさがす</p></a></li>
-              <li class="main-nav_item"><a href="index.html#category-area-id" class=""><i class="fas fa-folder-open fa-fw"></i><p>カテゴリからさがす</p></a></li>
+              <li class="main-nav_item"><a href="#map-area-id" class=""><i class="fas fa-map-marked-alt fa-fw"></i><p>エリアからさがす</p></a></li>
+              <li class="main-nav_item"><a href="#category-area-id" class=""><i class="fas fa-folder-open fa-fw"></i><p>カテゴリからさがす</p></a></li>
             </ul>
           </div>
         </nav>
@@ -332,7 +332,20 @@
 <script src="js/function.js"></script>
 <script src="js/particles.min.js"></script>
 <script src="js/setting.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
+<script type="text/javascript">
+$(function(){
+    $('a[href^=#]').click(function(){
+        var speed = 1000;
+        var href= $(this).attr("href");
+        var target = $(href == "#" || href == "" ? 'html' : href);
+        var position = target.offset().top;
+        $("html, body").animate({scrollTop:position}, speed, "swing");
+        return false;
+    });
+});
+</script>
 
     
 </body>
